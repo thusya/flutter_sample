@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+I have updated the design aas per the Love to ride iOS app without Map. 
+It has designed for android and iOS just for the showcase design with hard coded data and bottom sheet. 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
