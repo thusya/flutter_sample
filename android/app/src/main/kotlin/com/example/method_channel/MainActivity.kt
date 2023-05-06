@@ -1,6 +1,7 @@
 package com.example.method_channel
 
 import android.os.Handler
+import android.os.Looper
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -15,9 +16,9 @@ class MainActivity : FlutterActivity() {
             "bottom_sheet_method_channel"
         ).setMethodCallHandler { call, result ->
             if (call.method == "getData") {
-                Handler().postDelayed({
+                Handler(Looper.getMainLooper()).postDelayed({
                     sendDataToFlutter(result);
-                }, 3000)
+                }, 2000)
             }else {
                 result.notImplemented();
             }
