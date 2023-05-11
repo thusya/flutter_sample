@@ -10,24 +10,24 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
+        GeneratedPluginRegistrant.registerWith(flutterEngine)
         MethodChannel(
             flutterEngine.dartExecutor,
             "bottom_sheet_method_channel"
         ).setMethodCallHandler { call, result ->
             if (call.method == "getData") {
                 Handler(Looper.getMainLooper()).postDelayed({
-                    sendDataToFlutter(result);
+                    sendDataToFlutter(result)
                 }, 2000)
             }else {
-                result.notImplemented();
+                result.notImplemented()
             }
         }
     }
 
     private fun sendDataToFlutter(result: MethodChannel.Result) {
         // Prepare the data to send to Flutter
-        val data: HashMap<String, Any> = HashMap()
+        val data = mutableMapOf<String, String>()
         data["distance"] = "3.08 Miles"
         data["date"] = "5th May"
         data["time"] = "10:02 - 18:32 (30 Minutes)"

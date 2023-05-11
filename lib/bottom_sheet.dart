@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,7 +29,9 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
   // Receive data from the native code
   Future<void> _receiveDataFromNative() async {
-    print(await platform.invokeMethod('getData'));
+    if (kDebugMode) {
+      print(await platform.invokeMethod('getData'));
+    }
     Map<dynamic, dynamic> data = await platform.invokeMethod('getData');
     setState(() {
       distance = data['distance'].toString();
@@ -56,13 +59,13 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 2,
                 blurRadius: 6,
-                offset: Offset(0, -3),
+                offset: const Offset(0, -3),
               ),
             ],
           ),
           child: ListView(
             controller: scrollController,
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
