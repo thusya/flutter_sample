@@ -2,10 +2,10 @@
     package="com.example.method_channel">
    <application
         android:label="method_channel"
-        android:name="${applicationName}"
+        android:name=".App"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

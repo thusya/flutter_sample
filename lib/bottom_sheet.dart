@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Define the method channel
-const platform = MethodChannel('bottom_sheet_method_channel');
+const platform = MethodChannel('flutter_method_channel');
 
 class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({super.key});
@@ -30,9 +30,10 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   // Receive data from the native code
   Future<void> _receiveDataFromNative() async {
     if (kDebugMode) {
-      print(await platform.invokeMethod('getData'));
+      print(await platform.invokeMethod('getTravelDetails'));
     }
-    Map<dynamic, dynamic> data = await platform.invokeMethod('getData');
+    Map<dynamic, dynamic> data =
+        await platform.invokeMethod('getTravelDetails');
     setState(() {
       distance = data['distance'].toString();
       date = data['date'].toString();
