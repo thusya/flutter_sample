@@ -16,4 +16,11 @@ MVVM\
 Koin for dependency injection\
 Gson for json parsing
 
+# Screen record
+
+![Gif file](https://github.com/thusya/my_flutter/assets/4386346/bd7abe4e-99fc-4966-8060-d63d69ec1f7a)
+
+[Screens are here](https://github.com/thusya/my_flutter/tree/master/android/screens)
+
+
 
